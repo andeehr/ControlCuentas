@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ControlCuentasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="CategoriaGasto">
+          <Key>
+            <PropertyRef Name="IdCategoria" />
+          </Key>
+          <Property Name="IdCategoria" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="CategoriaIngreso">
+          <Key>
+            <PropertyRef Name="IdCategoriaIngreso" />
+          </Key>
+          <Property Name="IdCategoriaIngreso" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Gasto">
+          <Key>
+            <PropertyRef Name="IdGasto" />
+          </Key>
+          <Property Name="IdGasto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Importe" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdMedio" Type="int" Nullable="false" />
+          <Property Name="IdSubcategoria" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Ingreso">
+          <Key>
+            <PropertyRef Name="IdIngreso" />
+          </Key>
+          <Property Name="IdIngreso" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Fecha" Type="datetime" Nullable="false" />
+          <Property Name="Importe" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IdMedio" Type="int" Nullable="false" />
+          <Property Name="Observaciones" Type="nvarchar" MaxLength="50" />
+          <Property Name="IdCategoriaIngreso" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Medio">
+          <Key>
+            <PropertyRef Name="IdMedio" />
+          </Key>
+          <Property Name="IdMedio" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="SubcategoriaGasto">
+          <Key>
+            <PropertyRef Name="IdSubcategoria" />
+          </Key>
+          <Property Name="IdSubcategoria" Type="int" Nullable="false" />
+          <Property Name="Descripcion" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="IdCategoria" Type="int" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_Gasto_Medio">
+          <End Role="Medio" Type="Self.Medio" Multiplicity="1" />
+          <End Role="Gasto" Type="Self.Gasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medio">
+              <PropertyRef Name="IdMedio" />
+            </Principal>
+            <Dependent Role="Gasto">
+              <PropertyRef Name="IdMedio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gasto_Subcategoria">
+          <End Role="SubcategoriaGasto" Type="Self.SubcategoriaGasto" Multiplicity="1" />
+          <End Role="Gasto" Type="Self.Gasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubcategoriaGasto">
+              <PropertyRef Name="IdSubcategoria" />
+            </Principal>
+            <Dependent Role="Gasto">
+              <PropertyRef Name="IdSubcategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingreso_CategoriaIngreso">
+          <End Role="CategoriaIngreso" Type="Self.CategoriaIngreso" Multiplicity="1" />
+          <End Role="Ingreso" Type="Self.Ingreso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaIngreso">
+              <PropertyRef Name="IdCategoriaIngreso" />
+            </Principal>
+            <Dependent Role="Ingreso">
+              <PropertyRef Name="IdCategoriaIngreso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingreso_Medio">
+          <End Role="Medio" Type="Self.Medio" Multiplicity="1" />
+          <End Role="Ingreso" Type="Self.Ingreso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medio">
+              <PropertyRef Name="IdMedio" />
+            </Principal>
+            <Dependent Role="Ingreso">
+              <PropertyRef Name="IdMedio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subcategoria_Categoria">
+          <End Role="CategoriaGasto" Type="Self.CategoriaGasto" Multiplicity="1" />
+          <End Role="SubcategoriaGasto" Type="Self.SubcategoriaGasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaGasto">
+              <PropertyRef Name="IdCategoria" />
+            </Principal>
+            <Dependent Role="SubcategoriaGasto">
+              <PropertyRef Name="IdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ControlCuentasModelStoreContainer">
+          <EntitySet Name="CategoriaGasto" EntityType="Self.CategoriaGasto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CategoriaIngreso" EntityType="Self.CategoriaIngreso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Gasto" EntityType="Self.Gasto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Ingreso" EntityType="Self.Ingreso" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Medio" EntityType="Self.Medio" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SubcategoriaGasto" EntityType="Self.SubcategoriaGasto" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Gasto_Medio" Association="Self.FK_Gasto_Medio">
+            <End Role="Medio" EntitySet="Medio" />
+            <End Role="Gasto" EntitySet="Gasto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gasto_Subcategoria" Association="Self.FK_Gasto_Subcategoria">
+            <End Role="SubcategoriaGasto" EntitySet="SubcategoriaGasto" />
+            <End Role="Gasto" EntitySet="Gasto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingreso_CategoriaIngreso" Association="Self.FK_Ingreso_CategoriaIngreso">
+            <End Role="CategoriaIngreso" EntitySet="CategoriaIngreso" />
+            <End Role="Ingreso" EntitySet="Ingreso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingreso_Medio" Association="Self.FK_Ingreso_Medio">
+            <End Role="Medio" EntitySet="Medio" />
+            <End Role="Ingreso" EntitySet="Ingreso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subcategoria_Categoria" Association="Self.FK_Subcategoria_Categoria">
+            <End Role="CategoriaGasto" EntitySet="CategoriaGasto" />
+            <End Role="SubcategoriaGasto" EntitySet="SubcategoriaGasto" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ControlCuentasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="CategoriaGasto">
+          <Key>
+            <PropertyRef Name="IdCategoria" />
+          </Key>
+          <Property Name="IdCategoria" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="SubcategoriaGasto" Relationship="Self.FK_Subcategoria_Categoria" FromRole="CategoriaGasto" ToRole="SubcategoriaGasto" />
+        </EntityType>
+        <EntityType Name="CategoriaIngreso">
+          <Key>
+            <PropertyRef Name="IdCategoriaIngreso" />
+          </Key>
+          <Property Name="IdCategoriaIngreso" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Ingreso" Relationship="Self.FK_Ingreso_CategoriaIngreso" FromRole="CategoriaIngreso" ToRole="Ingreso" />
+        </EntityType>
+        <EntityType Name="Gasto">
+          <Key>
+            <PropertyRef Name="IdGasto" />
+          </Key>
+          <Property Name="IdGasto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdMedio" Type="Int32" Nullable="false" />
+          <Property Name="IdSubcategoria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Medio" Relationship="Self.FK_Gasto_Medio" FromRole="Gasto" ToRole="Medio" />
+          <NavigationProperty Name="SubcategoriaGasto" Relationship="Self.FK_Gasto_Subcategoria" FromRole="Gasto" ToRole="SubcategoriaGasto" />
+        </EntityType>
+        <EntityType Name="Ingreso">
+          <Key>
+            <PropertyRef Name="IdIngreso" />
+          </Key>
+          <Property Name="IdIngreso" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Importe" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IdMedio" Type="Int32" Nullable="false" />
+          <Property Name="Observaciones" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IdCategoriaIngreso" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CategoriaIngreso" Relationship="Self.FK_Ingreso_CategoriaIngreso" FromRole="Ingreso" ToRole="CategoriaIngreso" />
+          <NavigationProperty Name="Medio" Relationship="Self.FK_Ingreso_Medio" FromRole="Ingreso" ToRole="Medio" />
+        </EntityType>
+        <EntityType Name="Medio">
+          <Key>
+            <PropertyRef Name="IdMedio" />
+          </Key>
+          <Property Name="IdMedio" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Gasto" Relationship="Self.FK_Gasto_Medio" FromRole="Medio" ToRole="Gasto" />
+          <NavigationProperty Name="Ingreso" Relationship="Self.FK_Ingreso_Medio" FromRole="Medio" ToRole="Ingreso" />
+        </EntityType>
+        <EntityType Name="SubcategoriaGasto">
+          <Key>
+            <PropertyRef Name="IdSubcategoria" />
+          </Key>
+          <Property Name="IdSubcategoria" Type="Int32" Nullable="false" />
+          <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="IdCategoria" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="CategoriaGasto" Relationship="Self.FK_Subcategoria_Categoria" FromRole="SubcategoriaGasto" ToRole="CategoriaGasto" />
+          <NavigationProperty Name="Gasto" Relationship="Self.FK_Gasto_Subcategoria" FromRole="SubcategoriaGasto" ToRole="Gasto" />
+        </EntityType>
+        <Association Name="FK_Subcategoria_Categoria">
+          <End Role="CategoriaGasto" Type="Self.CategoriaGasto" Multiplicity="1" />
+          <End Role="SubcategoriaGasto" Type="Self.SubcategoriaGasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaGasto">
+              <PropertyRef Name="IdCategoria" />
+            </Principal>
+            <Dependent Role="SubcategoriaGasto">
+              <PropertyRef Name="IdCategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingreso_CategoriaIngreso">
+          <End Role="CategoriaIngreso" Type="Self.CategoriaIngreso" Multiplicity="1" />
+          <End Role="Ingreso" Type="Self.Ingreso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="CategoriaIngreso">
+              <PropertyRef Name="IdCategoriaIngreso" />
+            </Principal>
+            <Dependent Role="Ingreso">
+              <PropertyRef Name="IdCategoriaIngreso" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gasto_Medio">
+          <End Role="Medio" Type="Self.Medio" Multiplicity="1" />
+          <End Role="Gasto" Type="Self.Gasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medio">
+              <PropertyRef Name="IdMedio" />
+            </Principal>
+            <Dependent Role="Gasto">
+              <PropertyRef Name="IdMedio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Gasto_Subcategoria">
+          <End Role="SubcategoriaGasto" Type="Self.SubcategoriaGasto" Multiplicity="1" />
+          <End Role="Gasto" Type="Self.Gasto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SubcategoriaGasto">
+              <PropertyRef Name="IdSubcategoria" />
+            </Principal>
+            <Dependent Role="Gasto">
+              <PropertyRef Name="IdSubcategoria" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Ingreso_Medio">
+          <End Role="Medio" Type="Self.Medio" Multiplicity="1" />
+          <End Role="Ingreso" Type="Self.Ingreso" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Medio">
+              <PropertyRef Name="IdMedio" />
+            </Principal>
+            <Dependent Role="Ingreso">
+              <PropertyRef Name="IdMedio" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="CCEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="CategoriaGasto" EntityType="Self.CategoriaGasto" />
+          <EntitySet Name="CategoriaIngreso" EntityType="Self.CategoriaIngreso" />
+          <EntitySet Name="Gasto" EntityType="Self.Gasto" />
+          <EntitySet Name="Ingreso" EntityType="Self.Ingreso" />
+          <EntitySet Name="Medio" EntityType="Self.Medio" />
+          <EntitySet Name="SubcategoriaGasto" EntityType="Self.SubcategoriaGasto" />
+          <AssociationSet Name="FK_Subcategoria_Categoria" Association="Self.FK_Subcategoria_Categoria">
+            <End Role="CategoriaGasto" EntitySet="CategoriaGasto" />
+            <End Role="SubcategoriaGasto" EntitySet="SubcategoriaGasto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingreso_CategoriaIngreso" Association="Self.FK_Ingreso_CategoriaIngreso">
+            <End Role="CategoriaIngreso" EntitySet="CategoriaIngreso" />
+            <End Role="Ingreso" EntitySet="Ingreso" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gasto_Medio" Association="Self.FK_Gasto_Medio">
+            <End Role="Medio" EntitySet="Medio" />
+            <End Role="Gasto" EntitySet="Gasto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Gasto_Subcategoria" Association="Self.FK_Gasto_Subcategoria">
+            <End Role="SubcategoriaGasto" EntitySet="SubcategoriaGasto" />
+            <End Role="Gasto" EntitySet="Gasto" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Ingreso_Medio" Association="Self.FK_Ingreso_Medio">
+            <End Role="Medio" EntitySet="Medio" />
+            <End Role="Ingreso" EntitySet="Ingreso" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ControlCuentasModelStoreContainer" CdmEntityContainer="CCEntities">
+          <EntitySetMapping Name="CategoriaGasto">
+            <EntityTypeMapping TypeName="ControlCuentasModel.CategoriaGasto">
+              <MappingFragment StoreEntitySet="CategoriaGasto">
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CategoriaIngreso">
+            <EntityTypeMapping TypeName="ControlCuentasModel.CategoriaIngreso">
+              <MappingFragment StoreEntitySet="CategoriaIngreso">
+                <ScalarProperty Name="IdCategoriaIngreso" ColumnName="IdCategoriaIngreso" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Gasto">
+            <EntityTypeMapping TypeName="ControlCuentasModel.Gasto">
+              <MappingFragment StoreEntitySet="Gasto">
+                <ScalarProperty Name="IdGasto" ColumnName="IdGasto" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="IdMedio" ColumnName="IdMedio" />
+                <ScalarProperty Name="IdSubcategoria" ColumnName="IdSubcategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Ingreso">
+            <EntityTypeMapping TypeName="ControlCuentasModel.Ingreso">
+              <MappingFragment StoreEntitySet="Ingreso">
+                <ScalarProperty Name="IdIngreso" ColumnName="IdIngreso" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+                <ScalarProperty Name="Importe" ColumnName="Importe" />
+                <ScalarProperty Name="IdMedio" ColumnName="IdMedio" />
+                <ScalarProperty Name="Observaciones" ColumnName="Observaciones" />
+                <ScalarProperty Name="IdCategoriaIngreso" ColumnName="IdCategoriaIngreso" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Medio">
+            <EntityTypeMapping TypeName="ControlCuentasModel.Medio">
+              <MappingFragment StoreEntitySet="Medio">
+                <ScalarProperty Name="IdMedio" ColumnName="IdMedio" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SubcategoriaGasto">
+            <EntityTypeMapping TypeName="ControlCuentasModel.SubcategoriaGasto">
+              <MappingFragment StoreEntitySet="SubcategoriaGasto">
+                <ScalarProperty Name="IdSubcategoria" ColumnName="IdSubcategoria" />
+                <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+                <ScalarProperty Name="IdCategoria" ColumnName="IdCategoria" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
