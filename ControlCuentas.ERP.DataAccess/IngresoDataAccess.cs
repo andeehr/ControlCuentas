@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControlCuentas.ERP.BusinessLogic
+namespace ControlCuentas.ERP.DataAccess
 {
-    public class Class1
+    public class IngresoDataAccess
     {
     }
 }

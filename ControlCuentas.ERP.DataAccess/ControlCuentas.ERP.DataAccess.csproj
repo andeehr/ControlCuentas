@@ -71,13 +71,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CCEntities.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Class1.cs" />
+    <Compile Include="GastoDataAccess.cs" />
     <Compile Include="Gasto.cs">
       <DependentUpon>CCEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Ingreso.cs">
       <DependentUpon>CCEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="IngresoDataAccess.cs" />
     <Compile Include="Medio.cs">
       <DependentUpon>CCEntities.tt</DependentUpon>
     </Compile>
