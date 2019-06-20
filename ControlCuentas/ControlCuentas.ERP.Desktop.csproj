@@ -77,6 +77,7 @@
     </Compile>
     <None Include="Properties\DataSources\ControlCuentas.ERP.DataAccess.Medio.datasource" />
     <None Include="Properties\DataSources\ControlCuentas.ERP.Entities.ViewModels.GastoListViewModel.datasource" />
+    <None Include="Properties\DataSources\ControlCuentas.ERP.Entities.ViewModels.SelectListItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -91,6 +92,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ControlCuentas.ERP.BusinessLogic\ControlCuentas.ERP.BusinessLogic.csproj">
+      <Project>{1f3c46b6-96e8-41c2-9f7f-2c5223525979}</Project>
+      <Name>ControlCuentas.ERP.BusinessLogic</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ControlCuentas.ERP.DataAccess\ControlCuentas.ERP.DataAccess.csproj">
       <Project>{a5e00cd5-c24f-4d0d-b650-8334f7446471}</Project>
       <Name>ControlCuentas.ERP.DataAccess</Name>

@@ -29,30 +29,32 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gbAcciones = new System.Windows.Forms.GroupBox();
+            this.checkBoxCategoria = new System.Windows.Forms.CheckBox();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.selectListItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.checkBoxMedio = new System.Windows.Forms.CheckBox();
+            this.cbMedio = new System.Windows.Forms.ComboBox();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.checkBoxHasta = new System.Windows.Forms.CheckBox();
+            this.checkBoxDesde = new System.Windows.Forms.CheckBox();
+            this.dtHasta = new System.Windows.Forms.DateTimePicker();
+            this.dtDesde = new System.Windows.Forms.DateTimePicker();
             this.button4 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.dtDesde = new System.Windows.Forms.DateTimePicker();
-            this.dtHasta = new System.Windows.Forms.DateTimePicker();
-            this.checkBoxDesde = new System.Windows.Forms.CheckBox();
-            this.checkBoxHasta = new System.Windows.Forms.CheckBox();
-            this.cbMedio = new System.Windows.Forms.ComboBox();
-            this.cbCategoria = new System.Windows.Forms.ComboBox();
-            this.checkBoxCategoria = new System.Windows.Forms.CheckBox();
-            this.checkBoxMedio = new System.Windows.Forms.CheckBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.gastoListViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idGastoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subcategoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gastoListViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.medioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbAcciones.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.selectListItemBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gastoListViewModelBindingSource)).BeginInit();
@@ -72,6 +74,58 @@
             this.gbAcciones.TabIndex = 7;
             this.gbAcciones.TabStop = false;
             this.gbAcciones.Text = "Filtros:";
+            // 
+            // checkBoxCategoria
+            // 
+            this.checkBoxCategoria.AutoSize = true;
+            this.checkBoxCategoria.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxCategoria.Location = new System.Drawing.Point(17, 80);
+            this.checkBoxCategoria.Name = "checkBoxCategoria";
+            this.checkBoxCategoria.Size = new System.Drawing.Size(100, 21);
+            this.checkBoxCategoria.TabIndex = 5;
+            this.checkBoxCategoria.Text = "Categoria:";
+            this.checkBoxCategoria.UseVisualStyleBackColor = true;
+            // 
+            // cbCategoria
+            // 
+            this.cbCategoria.DataSource = this.selectListItemBindingSource;
+            this.cbCategoria.DisplayMember = "Desc";
+            this.cbCategoria.Enabled = false;
+            this.cbCategoria.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(148, 82);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(121, 25);
+            this.cbCategoria.TabIndex = 1;
+            this.cbCategoria.ValueMember = "Id";
+            // 
+            // selectListItemBindingSource
+            // 
+            this.selectListItemBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.SelectListItem);
+            // 
+            // checkBoxMedio
+            // 
+            this.checkBoxMedio.AutoSize = true;
+            this.checkBoxMedio.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxMedio.Location = new System.Drawing.Point(17, 49);
+            this.checkBoxMedio.Name = "checkBoxMedio";
+            this.checkBoxMedio.Size = new System.Drawing.Size(74, 21);
+            this.checkBoxMedio.TabIndex = 4;
+            this.checkBoxMedio.Text = "Medio:";
+            this.checkBoxMedio.UseVisualStyleBackColor = true;
+            // 
+            // cbMedio
+            // 
+            this.cbMedio.DataSource = this.selectListItemBindingSource;
+            this.cbMedio.DisplayMember = "Desc";
+            this.cbMedio.Enabled = false;
+            this.cbMedio.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMedio.FormattingEnabled = true;
+            this.cbMedio.Location = new System.Drawing.Point(148, 47);
+            this.cbMedio.Name = "cbMedio";
+            this.cbMedio.Size = new System.Drawing.Size(121, 25);
+            this.cbMedio.TabIndex = 0;
+            this.cbMedio.ValueMember = "Id";
             // 
             // button3
             // 
@@ -117,6 +171,48 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Fecha gasto:";
             // 
+            // checkBoxHasta
+            // 
+            this.checkBoxHasta.AutoSize = true;
+            this.checkBoxHasta.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxHasta.Location = new System.Drawing.Point(15, 80);
+            this.checkBoxHasta.Name = "checkBoxHasta";
+            this.checkBoxHasta.Size = new System.Drawing.Size(72, 21);
+            this.checkBoxHasta.TabIndex = 3;
+            this.checkBoxHasta.Text = "Hasta:";
+            this.checkBoxHasta.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxDesde
+            // 
+            this.checkBoxDesde.AutoSize = true;
+            this.checkBoxDesde.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBoxDesde.Location = new System.Drawing.Point(15, 49);
+            this.checkBoxDesde.Name = "checkBoxDesde";
+            this.checkBoxDesde.Size = new System.Drawing.Size(76, 21);
+            this.checkBoxDesde.TabIndex = 2;
+            this.checkBoxDesde.Text = "Desde:";
+            this.checkBoxDesde.UseVisualStyleBackColor = true;
+            // 
+            // dtHasta
+            // 
+            this.dtHasta.Enabled = false;
+            this.dtHasta.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtHasta.Location = new System.Drawing.Point(136, 76);
+            this.dtHasta.Name = "dtHasta";
+            this.dtHasta.Size = new System.Drawing.Size(137, 25);
+            this.dtHasta.TabIndex = 1;
+            // 
+            // dtDesde
+            // 
+            this.dtDesde.Enabled = false;
+            this.dtDesde.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtDesde.Location = new System.Drawing.Point(136, 45);
+            this.dtDesde.Name = "dtDesde";
+            this.dtDesde.Size = new System.Drawing.Size(137, 25);
+            this.dtDesde.TabIndex = 0;
+            // 
             // button4
             // 
             this.button4.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -137,90 +233,6 @@
             this.button5.Text = "Listar";
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // dtDesde
-            // 
-            this.dtDesde.Enabled = false;
-            this.dtDesde.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtDesde.Location = new System.Drawing.Point(136, 45);
-            this.dtDesde.Name = "dtDesde";
-            this.dtDesde.Size = new System.Drawing.Size(137, 25);
-            this.dtDesde.TabIndex = 0;
-            // 
-            // dtHasta
-            // 
-            this.dtHasta.Enabled = false;
-            this.dtHasta.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtHasta.Location = new System.Drawing.Point(136, 76);
-            this.dtHasta.Name = "dtHasta";
-            this.dtHasta.Size = new System.Drawing.Size(137, 25);
-            this.dtHasta.TabIndex = 1;
-            // 
-            // checkBoxDesde
-            // 
-            this.checkBoxDesde.AutoSize = true;
-            this.checkBoxDesde.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxDesde.Location = new System.Drawing.Point(15, 49);
-            this.checkBoxDesde.Name = "checkBoxDesde";
-            this.checkBoxDesde.Size = new System.Drawing.Size(76, 21);
-            this.checkBoxDesde.TabIndex = 2;
-            this.checkBoxDesde.Text = "Desde:";
-            this.checkBoxDesde.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxHasta
-            // 
-            this.checkBoxHasta.AutoSize = true;
-            this.checkBoxHasta.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxHasta.Location = new System.Drawing.Point(15, 80);
-            this.checkBoxHasta.Name = "checkBoxHasta";
-            this.checkBoxHasta.Size = new System.Drawing.Size(72, 21);
-            this.checkBoxHasta.TabIndex = 3;
-            this.checkBoxHasta.Text = "Hasta:";
-            this.checkBoxHasta.UseVisualStyleBackColor = true;
-            // 
-            // cbMedio
-            // 
-            this.cbMedio.Enabled = false;
-            this.cbMedio.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMedio.FormattingEnabled = true;
-            this.cbMedio.Location = new System.Drawing.Point(148, 47);
-            this.cbMedio.Name = "cbMedio";
-            this.cbMedio.Size = new System.Drawing.Size(121, 25);
-            this.cbMedio.TabIndex = 0;
-            // 
-            // cbCategoria
-            // 
-            this.cbCategoria.Enabled = false;
-            this.cbCategoria.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(148, 82);
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(121, 25);
-            this.cbCategoria.TabIndex = 1;
-            // 
-            // checkBoxCategoria
-            // 
-            this.checkBoxCategoria.AutoSize = true;
-            this.checkBoxCategoria.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxCategoria.Location = new System.Drawing.Point(17, 80);
-            this.checkBoxCategoria.Name = "checkBoxCategoria";
-            this.checkBoxCategoria.Size = new System.Drawing.Size(100, 21);
-            this.checkBoxCategoria.TabIndex = 5;
-            this.checkBoxCategoria.Text = "Categoria:";
-            this.checkBoxCategoria.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxMedio
-            // 
-            this.checkBoxMedio.AutoSize = true;
-            this.checkBoxMedio.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBoxMedio.Location = new System.Drawing.Point(17, 49);
-            this.checkBoxMedio.Name = "checkBoxMedio";
-            this.checkBoxMedio.Size = new System.Drawing.Size(74, 21);
-            this.checkBoxMedio.TabIndex = 4;
-            this.checkBoxMedio.Text = "Medio:";
-            this.checkBoxMedio.UseVisualStyleBackColor = true;
-            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -240,10 +252,6 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(624, 193);
             this.dataGridView1.TabIndex = 11;
-            // 
-            // gastoListViewModelBindingSource
-            // 
-            this.gastoListViewModelBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.GastoListViewModel);
             // 
             // idGastoDataGridViewTextBoxColumn
             // 
@@ -287,6 +295,10 @@
             this.subcategoriaDataGridViewTextBoxColumn.Name = "subcategoriaDataGridViewTextBoxColumn";
             this.subcategoriaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
+            // gastoListViewModelBindingSource
+            // 
+            this.gastoListViewModelBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.GastoListViewModel);
+            // 
             // medioBindingSource
             // 
             this.medioBindingSource.DataSource = typeof(ControlCuentas.ERP.DataAccess.Medio);
@@ -306,8 +318,10 @@
             this.Controls.Add(this.button1);
             this.Name = "GastoUI";
             this.Text = "Gastos";
+            this.Load += new System.EventHandler(this.GastoUI_Load);
             this.gbAcciones.ResumeLayout(false);
             this.gbAcciones.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.selectListItemBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -343,5 +357,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn subcategoriaDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource gastoListViewModelBindingSource;
         private System.Windows.Forms.BindingSource medioBindingSource;
+        private System.Windows.Forms.BindingSource selectListItemBindingSource;
     }
 }

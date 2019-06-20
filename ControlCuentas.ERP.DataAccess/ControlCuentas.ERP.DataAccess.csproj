@@ -71,6 +71,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CCEntities.edmx</DependentUpon>
     </Compile>
+    <Compile Include="CommonDataAccess.cs" />
     <Compile Include="GastoDataAccess.cs" />
     <Compile Include="Gasto.cs">
       <DependentUpon>CCEntities.tt</DependentUpon>
@@ -114,6 +115,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControlCuentas.ERP.Entities\ControlCuentas.ERP.Entities.csproj">
+      <Project>{3C6DBEC3-EE58-4FB0-BD8E-301972F452BB}</Project>
+      <Name>ControlCuentas.ERP.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

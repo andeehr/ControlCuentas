@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControlCuentas.ERP.BusinessLogic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,7 +20,7 @@ namespace ControlCuentas
 
         private void btnGastos_Click(object sender, EventArgs e)
         {
-            new GastoUI().Show();
+            new GastoUI(CommonBusiness.Instance).Show();
         }
     }
 }
