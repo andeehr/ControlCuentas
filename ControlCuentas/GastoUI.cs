@@ -23,7 +23,12 @@ namespace ControlCuentas
 
         private void GastoUI_Load(object sender, EventArgs e)
         {
-            cbCategoria.DataSource = commonBusiness.GetGetCategoriaGastoSelectionList();
+            try {
+                cbCategoria.DataSource = commonBusiness.GetGetCategoriaGastoSelectionList();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }
