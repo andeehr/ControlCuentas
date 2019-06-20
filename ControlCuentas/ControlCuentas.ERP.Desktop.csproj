@@ -75,6 +75,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Properties\DataSources\ControlCuentas.ERP.DataAccess.Medio.datasource" />
+    <None Include="Properties\DataSources\ControlCuentas.ERP.Entities.ViewModels.GastoListViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,6 +89,16 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ControlCuentas.ERP.DataAccess\ControlCuentas.ERP.DataAccess.csproj">
+      <Project>{a5e00cd5-c24f-4d0d-b650-8334f7446471}</Project>
+      <Name>ControlCuentas.ERP.DataAccess</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ControlCuentas.ERP.Entities\ControlCuentas.ERP.Entities.csproj">
+      <Project>{3c6dbec3-ee58-4fb0-bd8e-301972f452bb}</Project>
+      <Name>ControlCuentas.ERP.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

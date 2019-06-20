@@ -43,11 +43,11 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\GastoViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Config\" />
     <Folder Include="Entities\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
