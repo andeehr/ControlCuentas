@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ControlCuentas
 {
-    public partial class MenuPrincipal :Form
+    public partial class GastoUI :Form
     {
-        public MenuPrincipal()
+        public GastoUI()
         {
             InitializeComponent();
-        }
-
-        private void btnGastos_Click(object sender, EventArgs e)
-        {
-            new GastoUI().Show();
         }
     }
 }
