@@ -31,5 +31,21 @@ namespace ControlCuentas.ERP.BusinessLogic
                 return commonDA.GetCategoriaGastoSelectionList();
             }
         }
+
+        public IList<SelectListItem> GetGetCategoriaIngresoSelectionList()
+        {
+            using (var context = new CCEntities()) {
+                var commonDA = new CommonDataAccess(context);
+                return commonDA.GetCategoriaIngresoSelectionList();
+            }
+        }
+
+        public IList<SelectListItem> GetMedioSelectionList()
+        {
+            using (var context = new CCEntities()) {
+                var commonDA = new CommonDataAccess(context);
+                return commonDA.GetMedioSelectionList();
+            }
+        }
     }
 }

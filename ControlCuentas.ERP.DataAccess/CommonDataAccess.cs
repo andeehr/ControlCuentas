@@ -28,5 +28,29 @@ namespace ControlCuentas.ERP.DataAccess
                          };
             return result.ToList();
         }
+
+        public IList<SelectListItem> GetCategoriaIngresoSelectionList()
+        {
+            IQueryable<CategoriaIngreso> tCategoria = context.Set<CategoriaIngreso>().AsNoTracking();
+
+            var result = from categoria in tCategoria
+                         select new SelectListItem {
+                             Id = categoria.IdCategoriaIngreso,
+                             Desc = categoria.Descripcion
+                         };
+            return result.ToList();
+        }
+
+        public IList<SelectListItem> GetMedioSelectionList()
+        {
+            IQueryable<Medio> tMedio = context.Set<Medio>().AsNoTracking();
+
+            var result = from medio in tMedio
+                         select new SelectListItem {
+                             Id = medio.IdMedio,
+                             Desc = medio.Descripcion
+                         };
+            return result.ToList();
+        }
     }
 }
