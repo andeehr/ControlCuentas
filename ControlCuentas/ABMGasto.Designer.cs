@@ -1,6 +1,6 @@
 ﻿namespace ControlCuentas
 {
-    partial class GastoUI
+    partial class ABMGasto
     {
         /// <summary>
         /// Required designer variable.

@@ -53,11 +53,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GastoUI.cs">
+    <Compile Include="ABMGasto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GastoUI.Designer.cs">
-      <DependentUpon>GastoUI.cs</DependentUpon>
+    <Compile Include="ABMGasto.Designer.cs">
+      <DependentUpon>ABMGasto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGasto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGasto.Designer.cs">
+      <DependentUpon>FormGasto.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -67,8 +73,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="GastoUI.resx">
-      <DependentUpon>GastoUI.cs</DependentUpon>
+    <EmbeddedResource Include="ABMGasto.resx">
+      <DependentUpon>ABMGasto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGasto.resx">
+      <DependentUpon>FormGasto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>

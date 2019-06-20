@@ -1,5 +1,4 @@
-﻿using ControlCuentas.ERP.BusinessLogic;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,16 +10,11 @@ using System.Windows.Forms;
 
 namespace ControlCuentas
 {
-    public partial class MenuPrincipal :Form
+    public partial class FormGasto :Form
     {
-        public MenuPrincipal()
+        public FormGasto()
         {
             InitializeComponent();
-        }
-
-        private void btnGastos_Click(object sender, EventArgs e)
-        {
-            new ABMGasto(CommonBusiness.Instance).Show();
         }
     }
 }

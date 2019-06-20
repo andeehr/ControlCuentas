@@ -11,11 +11,11 @@ using ControlCuentas.ERP.BusinessLogic;
 
 namespace ControlCuentas
 {
-    public partial class GastoUI :Form
+    public partial class ABMGasto :Form
     {
         private readonly CommonBusiness commonBusiness;
 
-        public GastoUI(CommonBusiness commonBusiness)
+        public ABMGasto(CommonBusiness commonBusiness)
         {
             this.commonBusiness = commonBusiness;
             InitializeComponent();
