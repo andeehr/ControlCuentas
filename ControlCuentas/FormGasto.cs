@@ -32,6 +32,19 @@ namespace ControlCuentas
         {
             cbCategoria.DataSource = commonBusiness.GetGetCategoriaGastoSelectionList();
             cbMedio.DataSource = commonBusiness.GetMedioSelectionList();
+
+            if (idGasto.HasValue) {
+                CargarDatos();
+            }
+        }
+
+        private void CargarDatos()
+        {
+            var gasto = gastoBusiness.GetById(idGasto.Value);
+            cbSubcategoria.SelectedValue = gasto.IdSubcategoria;
+            cbMedio.SelectedValue = gasto.IdMedio;
+            tbImporte.Text = gasto.Importe.ToString();
+            tbObservaciones.Text = gasto.Observaciones;
         }
 
         private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,7 +64,19 @@ namespace ControlCuentas
 
         private void ModificarGasto()
         {
-            throw new NotImplementedException();
+            var gasto = gastoBusiness.GetById(idGasto.Value);
+
+            try {
+                if (MessageBox.Show("Se modificara el gasto. Desea continuar?", "", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                    ValidarDatos();
+                    CapturarDatos(gasto);
+                    gastoBusiness.Update(gasto);
+                    MessageBox.Show("Gasto modificado exitosamente");
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void AltaGasto()

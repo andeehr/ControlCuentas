@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ControlCuentas.ERP.BusinessLogic;
+using ControlCuentas.ERP.Infrastructure;
 
 namespace ControlCuentas
 {
@@ -36,6 +37,18 @@ namespace ControlCuentas
         private FormGasto CreateFormGasto(int? idGasto)
         {
             return new FormGasto(CommonBusiness.Instance, GastoBusiness.Instance, idGasto);
+        }
+
+        private void btnModificar_Click(object sender, EventArgs e)
+        {
+            try {
+                var idGasto = DataGridHelper.GetIdFromRowCell(dgGastos, "idGasto");
+                var form = CreateFormGasto(idGasto);
+                form.Show();
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

@@ -55,5 +55,14 @@ namespace ControlCuentas.ERP.BusinessLogic
                 context.SaveChanges();
             }
         }
+
+        public Gasto GetById(int id)
+        {
+            using (var context = new CCEntities()) {
+                var gastoDA = new GastoDataAccess(context);
+                var gasto = gastoDA.GetById(id);
+                return gasto;
+            }
+        }
     }
 }
