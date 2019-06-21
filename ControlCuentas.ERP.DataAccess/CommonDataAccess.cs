@@ -52,5 +52,18 @@ namespace ControlCuentas.ERP.DataAccess
                          };
             return result.ToList();
         }
+
+        public IList<SelectListItem> GetSubcategoriaSelectionListByIdCategoria(int idCategoria)
+        {
+            IQueryable<SubcategoriaGasto> tSubcategoria = context.Set<SubcategoriaGasto>().AsNoTracking();
+
+            var result = from subcategoria in tSubcategoria
+                         where subcategoria.IdCategoria == idCategoria
+                         select new SelectListItem {
+                             Id = subcategoria.IdSubcategoria,
+                             Desc = subcategoria.Descripcion
+                         };
+            return result.ToList();
+        }
     }
 }

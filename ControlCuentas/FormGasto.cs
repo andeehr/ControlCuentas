@@ -27,5 +27,11 @@ namespace ControlCuentas
             cbCategoria.DataSource = commonBusiness.GetGetCategoriaGastoSelectionList();
             cbMedio.DataSource = commonBusiness.GetMedioSelectionList();
         }
+
+        private void cbCategoria_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idCategoria = Convert.ToInt32(cbCategoria.SelectedValue);
+            cbSubcategoria.DataSource = commonBusiness.GetSubcategoriaSelectionListByIdCategoria(idCategoria);
+        }
     }
 }

@@ -179,6 +179,7 @@
             this.cbCategoria.Size = new System.Drawing.Size(137, 25);
             this.cbCategoria.TabIndex = 1;
             this.cbCategoria.ValueMember = "Id";
+            this.cbCategoria.SelectedIndexChanged += new System.EventHandler(this.cbCategoria_SelectedIndexChanged);
             // 
             // cbMedio
             // 
