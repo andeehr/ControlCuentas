@@ -120,6 +120,10 @@
       <Project>{3c6dbec3-ee58-4fb0-bd8e-301972f452bb}</Project>
       <Name>ControlCuentas.ERP.Entities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ControlCuentas.ERP.Infrastructure\ControlCuentas.ERP.Infrastructure.csproj">
+      <Project>{784EF80E-4B61-4E10-AFF5-7DFC892C540A}</Project>
+      <Name>ControlCuentas.ERP.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

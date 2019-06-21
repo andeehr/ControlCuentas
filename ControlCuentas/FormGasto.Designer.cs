@@ -30,20 +30,20 @@
             this.components = new System.ComponentModel.Container();
             this.gbGasto = new System.Windows.Forms.GroupBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbObservaciones = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.dtFecha = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.tbImporte = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.cbSubcategoria = new System.Windows.Forms.ComboBox();
+            this.selectListItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
             this.cbMedio = new System.Windows.Forms.ComboBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
-            this.selectListItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbGasto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.selectListItemBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -51,7 +51,7 @@
             // gbGasto
             // 
             this.gbGasto.Controls.Add(this.label6);
-            this.gbGasto.Controls.Add(this.textBox1);
+            this.gbGasto.Controls.Add(this.tbObservaciones);
             this.gbGasto.Controls.Add(this.label5);
             this.gbGasto.Controls.Add(this.dtFecha);
             this.gbGasto.Controls.Add(this.label4);
@@ -80,14 +80,14 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "Observaciones:";
             // 
-            // textBox1
+            // tbObservaciones
             // 
-            this.textBox1.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(161, 223);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 112);
-            this.textBox1.TabIndex = 14;
+            this.tbObservaciones.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbObservaciones.Location = new System.Drawing.Point(161, 223);
+            this.tbObservaciones.Multiline = true;
+            this.tbObservaciones.Name = "tbObservaciones";
+            this.tbObservaciones.Size = new System.Drawing.Size(137, 112);
+            this.tbObservaciones.TabIndex = 14;
             // 
             // label5
             // 
@@ -148,6 +148,10 @@
             this.cbSubcategoria.TabIndex = 8;
             this.cbSubcategoria.ValueMember = "Id";
             // 
+            // selectListItemBindingSource
+            // 
+            this.selectListItemBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.SelectListItem);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -202,6 +206,7 @@
             this.btnAceptar.TabIndex = 14;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnLimpiar
             // 
@@ -212,10 +217,7 @@
             this.btnLimpiar.TabIndex = 15;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // selectListItemBindingSource
-            // 
-            this.selectListItemBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.SelectListItem);
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // FormGasto
             // 
@@ -251,7 +253,7 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tbObservaciones;
         private System.Windows.Forms.BindingSource selectListItemBindingSource;
     }
 }

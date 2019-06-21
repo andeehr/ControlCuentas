@@ -29,7 +29,13 @@ namespace ControlCuentas
 
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            new FormGasto(CommonBusiness.Instance).Show();
+            var form = CreateFormGasto(null);
+            form.Show();
+        }
+
+        private FormGasto CreateFormGasto(int? idGasto)
+        {
+            return new FormGasto(CommonBusiness.Instance, GastoBusiness.Instance, idGasto);
         }
     }
 }
