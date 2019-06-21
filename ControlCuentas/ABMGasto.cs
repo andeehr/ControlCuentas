@@ -26,5 +26,10 @@ namespace ControlCuentas
             cbCategoria.DataSource = commonBusiness.GetGetCategoriaGastoSelectionList();
             cbMedio.DataSource = commonBusiness.GetMedioSelectionList();
         }
+
+        private void btnNuevo_Click(object sender, EventArgs e)
+        {
+            new FormGasto(CommonBusiness.Instance).Show();
+        }
     }
 }

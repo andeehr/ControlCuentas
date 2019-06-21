@@ -34,16 +34,16 @@
             this.selectListItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkBoxMedio = new System.Windows.Forms.CheckBox();
             this.cbMedio = new System.Windows.Forms.ComboBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.btnNuevo = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.checkBoxHasta = new System.Windows.Forms.CheckBox();
             this.checkBoxDesde = new System.Windows.Forms.CheckBox();
             this.dtHasta = new System.Windows.Forms.DateTimePicker();
             this.dtDesde = new System.Windows.Forms.DateTimePicker();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.btnListar = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.idGastoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -127,35 +127,36 @@
             this.cbMedio.TabIndex = 0;
             this.cbMedio.ValueMember = "Id";
             // 
-            // button3
+            // btnEliminar
             // 
-            this.button3.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(278, 193);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 33);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Eliminar";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnEliminar.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(278, 193);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(120, 33);
+            this.btnEliminar.TabIndex = 2;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnModificar
             // 
-            this.button2.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(152, 193);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 33);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Modificar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnModificar.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.Location = new System.Drawing.Point(152, 193);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(120, 33);
+            this.btnModificar.TabIndex = 1;
+            this.btnModificar.Text = "Modificar";
+            this.btnModificar.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btnNuevo
             // 
-            this.button1.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(26, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 33);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Nuevo";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnNuevo.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevo.Location = new System.Drawing.Point(26, 193);
+            this.btnNuevo.Name = "btnNuevo";
+            this.btnNuevo.Size = new System.Drawing.Size(120, 33);
+            this.btnNuevo.TabIndex = 0;
+            this.btnNuevo.Text = "Nuevo";
+            this.btnNuevo.UseVisualStyleBackColor = true;
+            this.btnNuevo.Click += new System.EventHandler(this.btnNuevo_Click);
             // 
             // groupBox1
             // 
@@ -213,25 +214,25 @@
             this.dtDesde.Size = new System.Drawing.Size(137, 25);
             this.dtDesde.TabIndex = 0;
             // 
-            // button4
+            // btnLimpiar
             // 
-            this.button4.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(404, 193);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 33);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Limpiar";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(404, 193);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(120, 33);
+            this.btnLimpiar.TabIndex = 9;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnListar
             // 
-            this.button5.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(530, 193);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 33);
-            this.button5.TabIndex = 10;
-            this.button5.Text = "Listar";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnListar.Font = new System.Drawing.Font("Britannic Bold", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnListar.Location = new System.Drawing.Point(530, 193);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(120, 33);
+            this.btnListar.TabIndex = 10;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
@@ -303,20 +304,20 @@
             // 
             this.medioBindingSource.DataSource = typeof(ControlCuentas.ERP.DataAccess.Medio);
             // 
-            // GastoUI
+            // ABMGasto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnListar);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.gbAcciones);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Name = "GastoUI";
+            this.Controls.Add(this.btnModificar);
+            this.Controls.Add(this.btnNuevo);
+            this.Name = "ABMGasto";
             this.Text = "Gastos";
             this.Load += new System.EventHandler(this.GastoUI_Load);
             this.gbAcciones.ResumeLayout(false);
@@ -334,16 +335,16 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gbAcciones;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.Button btnNuevo;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox checkBoxHasta;
         private System.Windows.Forms.CheckBox checkBoxDesde;
         private System.Windows.Forms.DateTimePicker dtHasta;
         private System.Windows.Forms.DateTimePicker dtDesde;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnListar;
         private System.Windows.Forms.CheckBox checkBoxCategoria;
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.CheckBox checkBoxMedio;

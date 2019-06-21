@@ -27,22 +27,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbGasto = new System.Windows.Forms.GroupBox();
-            this.cbCategoria = new System.Windows.Forms.ComboBox();
-            this.cbMedio = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.cbSubcategoria = new System.Windows.Forms.ComboBox();
-            this.tbImporte = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dtFecha = new System.Windows.Forms.DateTimePicker();
-            this.label5 = new System.Windows.Forms.Label();
-            this.btnAceptar = new System.Windows.Forms.Button();
-            this.btnLimpiar = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.dtFecha = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
+            this.tbImporte = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbSubcategoria = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cbCategoria = new System.Windows.Forms.ComboBox();
+            this.cbMedio = new System.Windows.Forms.ComboBox();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.selectListItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbGasto.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.selectListItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbGasto
@@ -67,49 +70,61 @@
             this.gbGasto.TabStop = false;
             this.gbGasto.Text = "Datos del gasto";
             // 
-            // cbCategoria
+            // label6
             // 
-            this.cbCategoria.DisplayMember = "Desc";
-            this.cbCategoria.Enabled = false;
-            this.cbCategoria.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbCategoria.FormattingEnabled = true;
-            this.cbCategoria.Location = new System.Drawing.Point(161, 85);
-            this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(137, 25);
-            this.cbCategoria.TabIndex = 1;
-            this.cbCategoria.ValueMember = "Id";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(37, 223);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(116, 17);
+            this.label6.TabIndex = 15;
+            this.label6.Text = "Observaciones:";
             // 
-            // cbMedio
+            // textBox1
             // 
-            this.cbMedio.DisplayMember = "Desc";
-            this.cbMedio.Enabled = false;
-            this.cbMedio.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbMedio.FormattingEnabled = true;
-            this.cbMedio.Location = new System.Drawing.Point(161, 50);
-            this.cbMedio.Name = "cbMedio";
-            this.cbMedio.Size = new System.Drawing.Size(137, 25);
-            this.cbMedio.TabIndex = 0;
-            this.cbMedio.ValueMember = "Id";
+            this.textBox1.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(161, 223);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(137, 112);
+            this.textBox1.TabIndex = 14;
             // 
-            // label1
+            // label5
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(37, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(55, 17);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "Medio:";
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(37, 193);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(54, 17);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Fecha:";
             // 
-            // label2
+            // dtFecha
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(37, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 17);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Categoria:";
+            this.dtFecha.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtFecha.Location = new System.Drawing.Point(161, 190);
+            this.dtFecha.Name = "dtFecha";
+            this.dtFecha.Size = new System.Drawing.Size(137, 25);
+            this.dtFecha.TabIndex = 12;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(37, 156);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(69, 17);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Importe:";
+            // 
+            // tbImporte
+            // 
+            this.tbImporte.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbImporte.Location = new System.Drawing.Point(161, 156);
+            this.tbImporte.Name = "tbImporte";
+            this.tbImporte.Size = new System.Drawing.Size(137, 25);
+            this.tbImporte.TabIndex = 10;
             // 
             // label3
             // 
@@ -123,8 +138,8 @@
             // 
             // cbSubcategoria
             // 
+            this.cbSubcategoria.DataSource = this.selectListItemBindingSource;
             this.cbSubcategoria.DisplayMember = "Desc";
-            this.cbSubcategoria.Enabled = false;
             this.cbSubcategoria.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSubcategoria.FormattingEnabled = true;
             this.cbSubcategoria.Location = new System.Drawing.Point(161, 121);
@@ -133,43 +148,49 @@
             this.cbSubcategoria.TabIndex = 8;
             this.cbSubcategoria.ValueMember = "Id";
             // 
-            // tbImporte
+            // label2
             // 
-            this.tbImporte.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbImporte.Location = new System.Drawing.Point(161, 156);
-            this.tbImporte.Name = "tbImporte";
-            this.tbImporte.Size = new System.Drawing.Size(137, 25);
-            this.tbImporte.TabIndex = 10;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(37, 87);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(81, 17);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Categoria:";
             // 
-            // label4
+            // label1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(37, 156);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 17);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Importe:";
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(37, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 17);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Medio:";
             // 
-            // dtFecha
+            // cbCategoria
             // 
-            this.dtFecha.Enabled = false;
-            this.dtFecha.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFecha.Location = new System.Drawing.Point(161, 190);
-            this.dtFecha.Name = "dtFecha";
-            this.dtFecha.Size = new System.Drawing.Size(137, 25);
-            this.dtFecha.TabIndex = 12;
+            this.cbCategoria.DataSource = this.selectListItemBindingSource;
+            this.cbCategoria.DisplayMember = "Desc";
+            this.cbCategoria.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbCategoria.FormattingEnabled = true;
+            this.cbCategoria.Location = new System.Drawing.Point(161, 85);
+            this.cbCategoria.Name = "cbCategoria";
+            this.cbCategoria.Size = new System.Drawing.Size(137, 25);
+            this.cbCategoria.TabIndex = 1;
+            this.cbCategoria.ValueMember = "Id";
             // 
-            // label5
+            // cbMedio
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(37, 193);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(54, 17);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Fecha:";
+            this.cbMedio.DataSource = this.selectListItemBindingSource;
+            this.cbMedio.DisplayMember = "Desc";
+            this.cbMedio.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbMedio.FormattingEnabled = true;
+            this.cbMedio.Location = new System.Drawing.Point(161, 50);
+            this.cbMedio.Name = "cbMedio";
+            this.cbMedio.Size = new System.Drawing.Size(137, 25);
+            this.cbMedio.TabIndex = 0;
+            this.cbMedio.ValueMember = "Id";
             // 
             // btnAceptar
             // 
@@ -191,24 +212,9 @@
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
             // 
-            // label6
+            // selectListItemBindingSource
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(37, 223);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(116, 17);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Observaciones:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(161, 223);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(137, 112);
-            this.textBox1.TabIndex = 14;
+            this.selectListItemBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.SelectListItem);
             // 
             // FormGasto
             // 
@@ -220,8 +226,10 @@
             this.Controls.Add(this.gbGasto);
             this.Name = "FormGasto";
             this.Text = "Formulario de gasto";
+            this.Load += new System.EventHandler(this.FormGasto_Load);
             this.gbGasto.ResumeLayout(false);
             this.gbGasto.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.selectListItemBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -243,5 +251,6 @@
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.BindingSource selectListItemBindingSource;
     }
 }
