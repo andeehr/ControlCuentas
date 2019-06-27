@@ -1,4 +1,5 @@
 ﻿using ControlCuentas.ERP.DataAccess;
+using ControlCuentas.ERP.Entities.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -62,6 +63,15 @@ namespace ControlCuentas.ERP.BusinessLogic
                 var gastoDA = new GastoDataAccess(context);
                 var gasto = gastoDA.GetById(id);
                 return gasto;
+            }
+        }
+
+        public IList<GastoListViewModel> GetList(GastoQuery query)
+        {
+            using (var context = new CCEntities()) {
+                var gastoDA = new GastoDataAccess(context);
+                var gastosList = gastoDA.GetList(query);
+                return gastosList;
             }
         }
     }
