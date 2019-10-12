@@ -13,7 +13,10 @@ namespace ControlCuentas.ERP.Entities.ViewModels
 
     public class GastoQuery
     {
-
+        public DateTime? FechaDesde { get; set; }
+        public DateTime? FechaHasta { get; set; }
+        public int? IdCategoria { get; set; }
+        public int? IdMedio { get; set; }
     }
 
     public class GastoListViewModel
