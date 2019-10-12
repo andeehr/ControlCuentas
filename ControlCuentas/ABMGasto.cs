@@ -77,7 +77,7 @@ namespace ControlCuentas
             }
 
             if (checkBoxMedio.Checked) {
-                query.IdMedio = (int)cbCategoria.SelectedValue;
+                query.IdMedio = (int)cbMedio.SelectedValue;
             } else {
                 query.IdMedio = null;
             }
@@ -128,5 +128,19 @@ namespace ControlCuentas
             }
         }
         #endregion
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try {
+                var idGasto = DataGridHelper.GetIdFromRowCell(dgGastos, "idGasto");
+                if (MessageBox.Show("Se eliminara el gasto seleccionado, desea continuar?", "Confirmacion", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                    gastoBusiness.Delete(idGasto);
+                    MessageBox.Show("Gasto eliminado exitosamente");
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }
