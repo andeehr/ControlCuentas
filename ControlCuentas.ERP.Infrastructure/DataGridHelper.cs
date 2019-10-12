@@ -22,7 +22,10 @@ namespace ControlCuentas.ERP.Infrastructure
                 DataGridViewRow row = dataGrid.CurrentRow;
                 idEntity = Convert.ToInt32(row.Cells[key].Value);
             }
-            catch (Exception) {
+            catch (NullReferenceException) {
+                throw new ApplicationException("No existe el dato solicitado, intente nuevamente con un dato valido");
+            }
+            catch (Exception ) {
                 throw new ApplicationException("Ha ocurrido un error inesperado. Pruebe nuevamente o contáctese con el administrador");
             }
 

@@ -89,5 +89,44 @@ namespace ControlCuentas
         {
             this.Buscar();
         }
+
+        #region Eventos de Checkboxs
+
+        private void checkBoxMedio_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxMedio.Checked) {
+                cbMedio.Enabled = true;
+            } else {
+                cbMedio.Enabled = false;
+            }
+        }
+
+        private void checkBoxCategoria_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxCategoria.Checked) {
+                cbCategoria.Enabled = true;
+            } else {
+                cbCategoria.Enabled = false;
+            }
+        }
+
+        private void checkBoxDesde_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxDesde.Checked) {
+                dtDesde.Enabled = true;
+            } else {
+                dtDesde.Enabled = false;    
+            }
+        }
+
+        private void checkBoxHasta_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxHasta.Checked) {
+                dtHasta.Enabled = true;
+            } else {
+                dtHasta.Enabled = false;
+            }
+        }
+        #endregion
     }
 }
