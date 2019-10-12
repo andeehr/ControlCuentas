@@ -81,7 +81,7 @@
             this.checkBoxCategoria.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxCategoria.Location = new System.Drawing.Point(17, 80);
             this.checkBoxCategoria.Name = "checkBoxCategoria";
-            this.checkBoxCategoria.Size = new System.Drawing.Size(100, 21);
+            this.checkBoxCategoria.Size = new System.Drawing.Size(113, 25);
             this.checkBoxCategoria.TabIndex = 5;
             this.checkBoxCategoria.Text = "Categoria:";
             this.checkBoxCategoria.UseVisualStyleBackColor = true;
@@ -95,7 +95,7 @@
             this.cbCategoria.FormattingEnabled = true;
             this.cbCategoria.Location = new System.Drawing.Point(148, 82);
             this.cbCategoria.Name = "cbCategoria";
-            this.cbCategoria.Size = new System.Drawing.Size(121, 25);
+            this.cbCategoria.Size = new System.Drawing.Size(121, 28);
             this.cbCategoria.TabIndex = 1;
             this.cbCategoria.ValueMember = "Id";
             // 
@@ -109,7 +109,7 @@
             this.checkBoxMedio.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxMedio.Location = new System.Drawing.Point(17, 49);
             this.checkBoxMedio.Name = "checkBoxMedio";
-            this.checkBoxMedio.Size = new System.Drawing.Size(74, 21);
+            this.checkBoxMedio.Size = new System.Drawing.Size(82, 25);
             this.checkBoxMedio.TabIndex = 4;
             this.checkBoxMedio.Text = "Medio:";
             this.checkBoxMedio.UseVisualStyleBackColor = true;
@@ -123,7 +123,7 @@
             this.cbMedio.FormattingEnabled = true;
             this.cbMedio.Location = new System.Drawing.Point(148, 47);
             this.cbMedio.Name = "cbMedio";
-            this.cbMedio.Size = new System.Drawing.Size(121, 25);
+            this.cbMedio.Size = new System.Drawing.Size(121, 28);
             this.cbMedio.TabIndex = 0;
             this.cbMedio.ValueMember = "Id";
             // 
@@ -179,7 +179,7 @@
             this.checkBoxHasta.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxHasta.Location = new System.Drawing.Point(15, 80);
             this.checkBoxHasta.Name = "checkBoxHasta";
-            this.checkBoxHasta.Size = new System.Drawing.Size(72, 21);
+            this.checkBoxHasta.Size = new System.Drawing.Size(82, 25);
             this.checkBoxHasta.TabIndex = 3;
             this.checkBoxHasta.Text = "Hasta:";
             this.checkBoxHasta.UseVisualStyleBackColor = true;
@@ -190,7 +190,7 @@
             this.checkBoxDesde.Font = new System.Drawing.Font("Britannic Bold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.checkBoxDesde.Location = new System.Drawing.Point(15, 49);
             this.checkBoxDesde.Name = "checkBoxDesde";
-            this.checkBoxDesde.Size = new System.Drawing.Size(76, 21);
+            this.checkBoxDesde.Size = new System.Drawing.Size(83, 25);
             this.checkBoxDesde.TabIndex = 2;
             this.checkBoxDesde.Text = "Desde:";
             this.checkBoxDesde.UseVisualStyleBackColor = true;
@@ -202,7 +202,7 @@
             this.dtHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtHasta.Location = new System.Drawing.Point(136, 76);
             this.dtHasta.Name = "dtHasta";
-            this.dtHasta.Size = new System.Drawing.Size(137, 25);
+            this.dtHasta.Size = new System.Drawing.Size(137, 28);
             this.dtHasta.TabIndex = 1;
             // 
             // dtDesde
@@ -212,7 +212,7 @@
             this.dtDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtDesde.Location = new System.Drawing.Point(136, 45);
             this.dtDesde.Name = "dtDesde";
-            this.dtDesde.Size = new System.Drawing.Size(137, 25);
+            this.dtDesde.Size = new System.Drawing.Size(137, 28);
             this.dtDesde.TabIndex = 0;
             // 
             // btnLimpiar
