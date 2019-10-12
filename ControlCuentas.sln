@@ -23,6 +23,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlCuentas.ERP.Entities
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlCuentas.ERP.Infrastructure", "ControlCuentas.ERP.Infrastructure\ControlCuentas.ERP.Infrastructure.csproj", "{784EF80E-4B61-4E10-AFF5-7DFC892C540A}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DatabaseCC", "DatabaseCC\DatabaseCC.sqlproj", "{89CF5C35-C6C3-448A-9341-7272EFE45E14}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -49,6 +51,12 @@ Global
 		{784EF80E-4B61-4E10-AFF5-7DFC892C540A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{784EF80E-4B61-4E10-AFF5-7DFC892C540A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{784EF80E-4B61-4E10-AFF5-7DFC892C540A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89CF5C35-C6C3-448A-9341-7272EFE45E14}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89CF5C35-C6C3-448A-9341-7272EFE45E14}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89CF5C35-C6C3-448A-9341-7272EFE45E14}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{89CF5C35-C6C3-448A-9341-7272EFE45E14}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89CF5C35-C6C3-448A-9341-7272EFE45E14}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89CF5C35-C6C3-448A-9341-7272EFE45E14}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -59,6 +67,7 @@ Global
 		{A5E00CD5-C24F-4D0D-B650-8334F7446471} = {44857BE7-DF3F-4A39-8FE5-063002CF9A6C}
 		{3C6DBEC3-EE58-4FB0-BD8E-301972F452BB} = {BB3D34EA-855A-4D8E-8C1D-41916EB72D2E}
 		{784EF80E-4B61-4E10-AFF5-7DFC892C540A} = {92845B6E-7B7C-423D-9B94-AF2141A44C31}
+		{89CF5C35-C6C3-448A-9341-7272EFE45E14} = {44857BE7-DF3F-4A39-8FE5-063002CF9A6C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {35EF1F44-59AD-487A-87CB-112CE25A900E}
