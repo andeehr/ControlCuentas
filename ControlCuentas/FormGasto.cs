@@ -41,7 +41,9 @@ namespace ControlCuentas
         private void CargarDatos()
         {
             var gasto = gastoBusiness.GetById(idGasto.Value);
+            cbCategoria.SelectedValue = gastoBusiness.GetCategoriaByIdSubcategoria(gasto.IdSubcategoria).IdCategoria;
             cbSubcategoria.SelectedValue = gasto.IdSubcategoria;
+            dtFecha.Value = gasto.Fecha;
             cbMedio.SelectedValue = gasto.IdMedio;
             tbImporte.Text = gasto.Importe.ToString();
             tbObservaciones.Text = gasto.Observaciones;

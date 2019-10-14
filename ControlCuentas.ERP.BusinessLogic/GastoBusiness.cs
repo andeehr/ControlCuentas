@@ -66,6 +66,15 @@ namespace ControlCuentas.ERP.BusinessLogic
             }
         }
 
+        public CategoriaGasto GetCategoriaByIdSubcategoria(int idSubcategoria)
+        {
+            using (var context = new CCEntities()) {
+                var gastoDA = new GastoDataAccess(context);
+                var categoria = gastoDA.GetCategoriaByIdSubcategoria(idSubcategoria);
+                return categoria;
+            }
+        }
+
         public IEnumerable<GastoListViewModel> GetGastos(GastoQuery query)
         {
             using (var context = new CCEntities()) {

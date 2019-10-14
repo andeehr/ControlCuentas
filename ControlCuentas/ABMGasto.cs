@@ -31,15 +31,12 @@ namespace ControlCuentas
             cbMedio.DataSource = commonBusiness.GetMedioSelectionList();
         }
 
+        #region ABM
+
         private void btnNuevo_Click(object sender, EventArgs e)
         {
             var form = CreateFormGasto(null);
             form.Show();
-        }
-
-        private FormGasto CreateFormGasto(int? idGasto)
-        {
-            return new FormGasto(CommonBusiness.Instance, GastoBusiness.Instance, idGasto);
         }
 
         private void btnModificar_Click(object sender, EventArgs e)
@@ -52,6 +49,26 @@ namespace ControlCuentas
             catch (Exception ex) {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            try {
+                var idGasto = DataGridHelper.GetIdFromRowCell(dgGastos, "idGasto");
+                if (MessageBox.Show("Se eliminara el gasto seleccionado, desea continuar?", "Confirmacion", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                    gastoBusiness.Delete(idGasto);
+                    MessageBox.Show("Gasto eliminado exitosamente");
+                }
+            }
+            catch (Exception ex) {
+                MessageBox.Show(ex.Message);
+            }
+        }
+        #endregion
+
+        private FormGasto CreateFormGasto(int? idGasto)
+        {
+            return new FormGasto(CommonBusiness.Instance, GastoBusiness.Instance, idGasto);
         }
 
         private void Buscar()
@@ -128,19 +145,5 @@ namespace ControlCuentas
             }
         }
         #endregion
-
-        private void btnEliminar_Click(object sender, EventArgs e)
-        {
-            try {
-                var idGasto = DataGridHelper.GetIdFromRowCell(dgGastos, "idGasto");
-                if (MessageBox.Show("Se eliminara el gasto seleccionado, desea continuar?", "Confirmacion", MessageBoxButtons.YesNo) == DialogResult.Yes) {
-                    gastoBusiness.Delete(idGasto);
-                    MessageBox.Show("Gasto eliminado exitosamente");
-                }
-            }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
-            }
-        }
     }
 }

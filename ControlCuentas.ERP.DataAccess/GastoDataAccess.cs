@@ -24,6 +24,19 @@ namespace ControlCuentas.ERP.DataAccess
             return gasto;
         }
 
+        public CategoriaGasto GetCategoriaByIdSubcategoria(int idSubcategoria)
+        {
+            IQueryable<CategoriaGasto> tCategoria = context.Set<CategoriaGasto>().AsNoTracking();
+            IQueryable<SubcategoriaGasto> tSubcategoria = context.Set<SubcategoriaGasto>().AsNoTracking();
+
+            var result = from categoria in tCategoria
+                         join subcategoria in tSubcategoria
+                         on categoria.IdCategoria equals subcategoria.IdCategoria
+                         where subcategoria.IdSubcategoria == idSubcategoria
+                         select categoria;
+            return result.First();
+        }
+
         public IEnumerable<GastoListViewModel> GetGastos(GastoQuery query)
         {
             var desde = new SqlParameter("@fechaDesde", query.FechaDesde ?? SqlDateTime.Null);

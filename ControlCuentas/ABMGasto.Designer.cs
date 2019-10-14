@@ -45,14 +45,14 @@
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
             this.dgGastos = new System.Windows.Forms.DataGridView();
+            this.gastoListViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.medioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.idGasto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.subcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gastoListViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.medioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbAcciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.selectListItemBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -261,12 +261,21 @@
             this.dgGastos.Size = new System.Drawing.Size(624, 193);
             this.dgGastos.TabIndex = 11;
             // 
+            // gastoListViewModelBindingSource
+            // 
+            this.gastoListViewModelBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.GastoListViewModel);
+            // 
+            // medioBindingSource
+            // 
+            this.medioBindingSource.DataSource = typeof(ControlCuentas.ERP.DataAccess.Medio);
+            // 
             // idGasto
             // 
             this.idGasto.DataPropertyName = "IdGasto";
             this.idGasto.HeaderText = "IdGasto";
             this.idGasto.Name = "idGasto";
             this.idGasto.ReadOnly = true;
+            this.idGasto.Visible = false;
             // 
             // fecha
             // 
@@ -288,6 +297,7 @@
             this.observaciones.HeaderText = "Observaciones";
             this.observaciones.Name = "observaciones";
             this.observaciones.ReadOnly = true;
+            this.observaciones.Width = 120;
             // 
             // categoria
             // 
@@ -295,6 +305,7 @@
             this.categoria.HeaderText = "Categoria";
             this.categoria.Name = "categoria";
             this.categoria.ReadOnly = true;
+            this.categoria.Width = 120;
             // 
             // subcategoria
             // 
@@ -302,14 +313,7 @@
             this.subcategoria.HeaderText = "Subcategoria";
             this.subcategoria.Name = "subcategoria";
             this.subcategoria.ReadOnly = true;
-            // 
-            // gastoListViewModelBindingSource
-            // 
-            this.gastoListViewModelBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.GastoListViewModel);
-            // 
-            // medioBindingSource
-            // 
-            this.medioBindingSource.DataSource = typeof(ControlCuentas.ERP.DataAccess.Medio);
+            this.subcategoria.Width = 120;
             // 
             // ABMGasto
             // 
