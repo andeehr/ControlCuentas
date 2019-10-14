@@ -22,5 +22,10 @@ namespace ControlCuentas
         {
             new ABMGasto().Show();
         }
+
+        private void btnIngresos_Click(object sender, EventArgs e)
+        {
+            new ABMIngreso().Show();
+        }
     }
 }

@@ -158,6 +158,7 @@
             this.btnIngresos.TabIndex = 0;
             this.btnIngresos.Text = "Ingresos";
             this.btnIngresos.UseVisualStyleBackColor = true;
+            this.btnIngresos.Click += new System.EventHandler(this.btnIngresos_Click);
             // 
             // MenuPrincipal
             // 

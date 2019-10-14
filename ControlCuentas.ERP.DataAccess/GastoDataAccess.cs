@@ -44,9 +44,9 @@ namespace ControlCuentas.ERP.DataAccess
             var idCategoria = new SqlParameter("@idCategoria", query.IdCategoria ?? SqlInt32.Null);
             var idMedio = new SqlParameter("@idMedio", query.IdMedio ?? SqlInt32.Null);
 
-            var result = context.Database.SqlQuery<GastoListViewModel>("exec dbo.[GetGastos] @fechaDesde, @fechaHasta, @idCategoria, @idMedio", desde, hasta, idCategoria, idMedio).ToList();
+            var result = context.Database.SqlQuery<GastoListViewModel>("exec dbo.[GetGastos] @fechaDesde, @fechaHasta, @idCategoria, @idMedio", desde, hasta, idCategoria, idMedio);
 
-            return result;
+            return result.ToList();
         }
     }
 }

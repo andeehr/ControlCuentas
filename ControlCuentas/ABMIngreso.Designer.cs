@@ -1,6 +1,6 @@
 ﻿namespace ControlCuentas
 {
-    partial class ABMGasto
+    partial class ABMIngreso
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,6 @@
             this.gbAcciones = new System.Windows.Forms.GroupBox();
             this.checkBoxCategoria = new System.Windows.Forms.CheckBox();
             this.cbCategoria = new System.Windows.Forms.ComboBox();
-            this.selectListItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.checkBoxMedio = new System.Windows.Forms.CheckBox();
             this.cbMedio = new System.Windows.Forms.ComboBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -44,21 +43,19 @@
             this.dtDesde = new System.Windows.Forms.DateTimePicker();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnListar = new System.Windows.Forms.Button();
-            this.dgGastos = new System.Windows.Forms.DataGridView();
-            this.idGasto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.importe = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subcategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gastoListViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.medioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dgIngresos = new System.Windows.Forms.DataGridView();
+            this.ingresoListViewModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.selectListItemBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.idIngreso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fechaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.importeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacionesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoriaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbAcciones.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.selectListItemBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgGastos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gastoListViewModelBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medioBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgIngresos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingresoListViewModelBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectListItemBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // gbAcciones
@@ -99,10 +96,6 @@
             this.cbCategoria.Size = new System.Drawing.Size(121, 25);
             this.cbCategoria.TabIndex = 1;
             this.cbCategoria.ValueMember = "Id";
-            // 
-            // selectListItemBindingSource
-            // 
-            this.selectListItemBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.SelectListItem);
             // 
             // checkBoxMedio
             // 
@@ -174,7 +167,7 @@
             this.groupBox1.Size = new System.Drawing.Size(310, 135);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Fecha gasto:";
+            this.groupBox1.Text = "Fecha ingreso:";
             // 
             // checkBoxHasta
             // 
@@ -229,6 +222,7 @@
             this.btnLimpiar.TabIndex = 9;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnListar
             // 
@@ -241,86 +235,74 @@
             this.btnListar.UseVisualStyleBackColor = true;
             this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
-            // dgGastos
+            // dgIngresos
             // 
-            this.dgGastos.AllowUserToAddRows = false;
-            this.dgGastos.AllowUserToDeleteRows = false;
-            this.dgGastos.AutoGenerateColumns = false;
-            this.dgGastos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgGastos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idGasto,
-            this.fecha,
-            this.importe,
-            this.observaciones,
-            this.categoria,
-            this.subcategoria});
-            this.dgGastos.DataSource = this.gastoListViewModelBindingSource;
-            this.dgGastos.Location = new System.Drawing.Point(26, 245);
-            this.dgGastos.Name = "dgGastos";
-            this.dgGastos.ReadOnly = true;
-            this.dgGastos.Size = new System.Drawing.Size(624, 193);
-            this.dgGastos.TabIndex = 11;
+            this.dgIngresos.AllowUserToAddRows = false;
+            this.dgIngresos.AllowUserToDeleteRows = false;
+            this.dgIngresos.AutoGenerateColumns = false;
+            this.dgIngresos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgIngresos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idIngreso,
+            this.fechaDataGridViewTextBoxColumn,
+            this.importeDataGridViewTextBoxColumn,
+            this.observacionesDataGridViewTextBoxColumn,
+            this.categoriaDataGridViewTextBoxColumn});
+            this.dgIngresos.DataSource = this.ingresoListViewModelBindingSource;
+            this.dgIngresos.Location = new System.Drawing.Point(26, 245);
+            this.dgIngresos.Name = "dgIngresos";
+            this.dgIngresos.ReadOnly = true;
+            this.dgIngresos.Size = new System.Drawing.Size(624, 193);
+            this.dgIngresos.TabIndex = 11;
             // 
-            // idGasto
+            // ingresoListViewModelBindingSource
             // 
-            this.idGasto.DataPropertyName = "IdGasto";
-            this.idGasto.HeaderText = "IdGasto";
-            this.idGasto.Name = "idGasto";
-            this.idGasto.ReadOnly = true;
-            this.idGasto.Visible = false;
+            this.ingresoListViewModelBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.IngresoListViewModel);
             // 
-            // fecha
+            // selectListItemBindingSource
             // 
-            this.fecha.DataPropertyName = "Fecha";
-            this.fecha.HeaderText = "Fecha";
-            this.fecha.Name = "fecha";
-            this.fecha.ReadOnly = true;
+            this.selectListItemBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.SelectListItem);
             // 
-            // importe
+            // idIngreso
             // 
-            this.importe.DataPropertyName = "Importe";
-            this.importe.HeaderText = "Importe";
-            this.importe.Name = "importe";
-            this.importe.ReadOnly = true;
+            this.idIngreso.DataPropertyName = "IdIngreso";
+            this.idIngreso.HeaderText = "IdIngreso";
+            this.idIngreso.Name = "idIngreso";
+            this.idIngreso.ReadOnly = true;
             // 
-            // observaciones
+            // fechaDataGridViewTextBoxColumn
             // 
-            this.observaciones.DataPropertyName = "Observaciones";
-            this.observaciones.HeaderText = "Observaciones";
-            this.observaciones.Name = "observaciones";
-            this.observaciones.ReadOnly = true;
-            this.observaciones.Width = 120;
+            this.fechaDataGridViewTextBoxColumn.DataPropertyName = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.HeaderText = "Fecha";
+            this.fechaDataGridViewTextBoxColumn.Name = "fechaDataGridViewTextBoxColumn";
+            this.fechaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // categoria
+            // importeDataGridViewTextBoxColumn
             // 
-            this.categoria.DataPropertyName = "Categoria";
-            this.categoria.HeaderText = "Categoria";
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            this.categoria.Width = 120;
+            this.importeDataGridViewTextBoxColumn.DataPropertyName = "Importe";
+            this.importeDataGridViewTextBoxColumn.HeaderText = "Importe";
+            this.importeDataGridViewTextBoxColumn.Name = "importeDataGridViewTextBoxColumn";
+            this.importeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // subcategoria
+            // observacionesDataGridViewTextBoxColumn
             // 
-            this.subcategoria.DataPropertyName = "Subcategoria";
-            this.subcategoria.HeaderText = "Subcategoria";
-            this.subcategoria.Name = "subcategoria";
-            this.subcategoria.ReadOnly = true;
-            this.subcategoria.Width = 120;
+            this.observacionesDataGridViewTextBoxColumn.DataPropertyName = "Observaciones";
+            this.observacionesDataGridViewTextBoxColumn.HeaderText = "Observaciones";
+            this.observacionesDataGridViewTextBoxColumn.Name = "observacionesDataGridViewTextBoxColumn";
+            this.observacionesDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // gastoListViewModelBindingSource
+            // categoriaDataGridViewTextBoxColumn
             // 
-            this.gastoListViewModelBindingSource.DataSource = typeof(ControlCuentas.ERP.Entities.ViewModels.GastoListViewModel);
+            this.categoriaDataGridViewTextBoxColumn.DataPropertyName = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn.HeaderText = "Categoria";
+            this.categoriaDataGridViewTextBoxColumn.Name = "categoriaDataGridViewTextBoxColumn";
+            this.categoriaDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // medioBindingSource
-            // 
-            this.medioBindingSource.DataSource = typeof(ControlCuentas.ERP.DataAccess.Medio);
-            // 
-            // ABMGasto
+            // ABMIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dgGastos);
+            this.Controls.Add(this.dgIngresos);
             this.Controls.Add(this.btnListar);
             this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.groupBox1);
@@ -328,17 +310,16 @@
             this.Controls.Add(this.gbAcciones);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnNuevo);
-            this.Name = "ABMGasto";
+            this.Name = "ABMIngreso";
             this.Text = "Gastos";
-            this.Load += new System.EventHandler(this.GastoUI_Load);
+            this.Load += new System.EventHandler(this.ABMIngreso_Load);
             this.gbAcciones.ResumeLayout(false);
             this.gbAcciones.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.selectListItemBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgGastos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gastoListViewModelBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.medioBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgIngresos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ingresoListViewModelBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.selectListItemBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -360,15 +341,13 @@
         private System.Windows.Forms.ComboBox cbCategoria;
         private System.Windows.Forms.CheckBox checkBoxMedio;
         private System.Windows.Forms.ComboBox cbMedio;
-        private System.Windows.Forms.DataGridView dgGastos;
-        private System.Windows.Forms.BindingSource gastoListViewModelBindingSource;
-        private System.Windows.Forms.BindingSource medioBindingSource;
+        private System.Windows.Forms.DataGridView dgIngresos;
+        private System.Windows.Forms.BindingSource ingresoListViewModelBindingSource;
         private System.Windows.Forms.BindingSource selectListItemBindingSource;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idGasto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
-        private System.Windows.Forms.DataGridViewTextBoxColumn importe;
-        private System.Windows.Forms.DataGridViewTextBoxColumn observaciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subcategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idIngreso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn importeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn observacionesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn categoriaDataGridViewTextBoxColumn;
     }
 }

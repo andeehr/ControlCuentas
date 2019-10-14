@@ -59,11 +59,23 @@
     <Compile Include="ABMGasto.Designer.cs">
       <DependentUpon>ABMGasto.cs</DependentUpon>
     </Compile>
+    <Compile Include="ABMIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ABMIngreso.Designer.cs">
+      <DependentUpon>ABMIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGasto.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormGasto.Designer.cs">
       <DependentUpon>FormGasto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormIngreso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIngreso.Designer.cs">
+      <DependentUpon>FormIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="MenuPrincipal.cs">
       <SubType>Form</SubType>
@@ -76,8 +88,14 @@
     <EmbeddedResource Include="ABMGasto.resx">
       <DependentUpon>ABMGasto.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ABMIngreso.resx">
+      <DependentUpon>ABMIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGasto.resx">
       <DependentUpon>FormGasto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIngreso.resx">
+      <DependentUpon>FormIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MenuPrincipal.resx">
       <DependentUpon>MenuPrincipal.cs</DependentUpon>
@@ -93,6 +111,7 @@
     </Compile>
     <None Include="Properties\DataSources\ControlCuentas.ERP.DataAccess.Medio.datasource" />
     <None Include="Properties\DataSources\ControlCuentas.ERP.Entities.ViewModels.GastoListViewModel.datasource" />
+    <None Include="Properties\DataSources\ControlCuentas.ERP.Entities.ViewModels.IngresoListViewModel.datasource" />
     <None Include="Properties\DataSources\ControlCuentas.ERP.Entities.ViewModels.SelectListItem.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

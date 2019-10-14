@@ -17,7 +17,7 @@ namespace ControlCuentas.ERP.DataAccess
             this.context = context;
         }
 
-        public IList<SelectListItem> GetCategoriaGastoSelectionList()
+        public IEnumerable<SelectListItem> GetCategoriaGastoSelectionList()
         {
             IQueryable<CategoriaGasto> tCategoria = context.Set<CategoriaGasto>().AsNoTracking();
 
@@ -29,7 +29,7 @@ namespace ControlCuentas.ERP.DataAccess
             return result.ToList();
         }
 
-        public IList<SelectListItem> GetCategoriaIngresoSelectionList()
+        public IEnumerable<SelectListItem> GetCategoriaIngresoSelectionList()
         {
             IQueryable<CategoriaIngreso> tCategoria = context.Set<CategoriaIngreso>().AsNoTracking();
 
@@ -41,7 +41,7 @@ namespace ControlCuentas.ERP.DataAccess
             return result.ToList();
         }
 
-        public IList<SelectListItem> GetMedioSelectionList()
+        public IEnumerable<SelectListItem> GetMedioSelectionList()
         {
             IQueryable<Medio> tMedio = context.Set<Medio>().AsNoTracking();
 
@@ -53,7 +53,7 @@ namespace ControlCuentas.ERP.DataAccess
             return result.ToList();
         }
 
-        public IList<SelectListItem> GetSubcategoriaSelectionListByIdCategoria(int idCategoria)
+        public IEnumerable<SelectListItem> GetSubcategoriaSelectionListByIdCategoria(int idCategoria)
         {
             IQueryable<SubcategoriaGasto> tSubcategoria = context.Set<SubcategoriaGasto>().AsNoTracking();
 
