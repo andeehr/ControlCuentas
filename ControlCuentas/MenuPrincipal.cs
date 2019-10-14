@@ -20,7 +20,7 @@ namespace ControlCuentas
 
         private void btnGastos_Click(object sender, EventArgs e)
         {
-            new ABMGasto(CommonBusiness.Instance, GastoBusiness.Instance).Show();
+            new ABMGasto().Show();
         }
     }
 }

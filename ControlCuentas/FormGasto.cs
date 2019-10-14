@@ -20,11 +20,11 @@ namespace ControlCuentas
         private readonly GastoBusiness gastoBusiness;
         private readonly int? idGasto;
 
-        public FormGasto(CommonBusiness commonBL, GastoBusiness gastoBL, int? idGasto)
+        public FormGasto(int? idGasto)
         {
             this.idGasto = idGasto;
-            this.gastoBusiness = gastoBL;
-            this.commonBusiness = commonBL;
+            this.gastoBusiness = new GastoBusiness();
+            this.commonBusiness = new CommonBusiness();
             InitializeComponent();
         }
 
@@ -76,8 +76,8 @@ namespace ControlCuentas
                     MessageBox.Show("Gasto modificado exitosamente");
                 }
             }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+            catch (Exception) {
+                MessageBox.Show("Hubo un error al cargar el gasto. Intente nuevamente.");
             }
         }
 
@@ -93,14 +93,14 @@ namespace ControlCuentas
                     MessageBox.Show("Gasto cargado exitosamente");
                 }
             }
-            catch (Exception ex) {
-                MessageBox.Show(ex.Message);
+            catch (Exception) {
+                MessageBox.Show("Hubo un error al cargar el gasto. Intente nuevamente.");
             }
         }
 
         private void CapturarDatos(Gasto gasto)
         {
-            gasto.Fecha = DateTime.Now;
+            gasto.Fecha = dtFecha.Value;
             gasto.Importe = Convert.ToDecimal(tbImporte.Text);
             gasto.IdMedio = Convert.ToInt32(cbMedio.SelectedValue);
             gasto.IdSubcategoria = Convert.ToInt32(cbSubcategoria.SelectedValue);

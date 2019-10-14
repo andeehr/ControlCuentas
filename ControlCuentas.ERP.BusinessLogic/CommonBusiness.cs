@@ -10,21 +10,7 @@ namespace ControlCuentas.ERP.BusinessLogic
 {
     public class CommonBusiness
     {
-        private static CommonBusiness _instance;
-
-        public static CommonBusiness Instance {
-            get {
-                if (_instance == null) {
-                    _instance = new CommonBusiness();
-                }
-                return _instance;
-            }
-            private set { }
-        }
-
-        private CommonBusiness() { }
-
-        public IList<SelectListItem> GetGetCategoriaGastoSelectionList()
+        public IEnumerable<SelectListItem> GetGetCategoriaGastoSelectionList()
         {
             using (var context = new CCEntities()) {
                 var commonDA = new CommonDataAccess(context);
@@ -32,7 +18,7 @@ namespace ControlCuentas.ERP.BusinessLogic
             }
         }
 
-        public IList<SelectListItem> GetGetCategoriaIngresoSelectionList()
+        public IEnumerable<SelectListItem> GetGetCategoriaIngresoSelectionList()
         {
             using (var context = new CCEntities()) {
                 var commonDA = new CommonDataAccess(context);
@@ -40,7 +26,7 @@ namespace ControlCuentas.ERP.BusinessLogic
             }
         }
 
-        public IList<SelectListItem> GetMedioSelectionList()
+        public IEnumerable<SelectListItem> GetMedioSelectionList()
         {
             using (var context = new CCEntities()) {
                 var commonDA = new CommonDataAccess(context);
@@ -48,7 +34,7 @@ namespace ControlCuentas.ERP.BusinessLogic
             }
         }
 
-        public IList<SelectListItem> GetSubcategoriaSelectionListByIdCategoria(int idCategoria)
+        public IEnumerable<SelectListItem> GetSubcategoriaSelectionListByIdCategoria(int idCategoria)
         {
             using (var context = new CCEntities()) {
                 var commonDA = new CommonDataAccess(context);

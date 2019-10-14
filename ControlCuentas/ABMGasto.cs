@@ -18,10 +18,10 @@ namespace ControlCuentas
         private readonly CommonBusiness commonBusiness;
         private readonly GastoBusiness gastoBusiness;
 
-        public ABMGasto(CommonBusiness commonBusiness, GastoBusiness gastoBusiness)
+        public ABMGasto()
         {
-            this.gastoBusiness = gastoBusiness;
-            this.commonBusiness = commonBusiness;
+            this.gastoBusiness = new GastoBusiness();
+            this.commonBusiness = new CommonBusiness();
             InitializeComponent();
         }
 
@@ -68,7 +68,7 @@ namespace ControlCuentas
 
         private FormGasto CreateFormGasto(int? idGasto)
         {
-            return new FormGasto(CommonBusiness.Instance, GastoBusiness.Instance, idGasto);
+            return new FormGasto(idGasto);
         }
 
         private void Buscar()

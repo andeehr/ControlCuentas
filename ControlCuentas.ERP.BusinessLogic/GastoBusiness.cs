@@ -11,21 +11,6 @@ namespace ControlCuentas.ERP.BusinessLogic
 {
     public class GastoBusiness
     {
-
-        private static GastoBusiness _instance;
-
-        public static GastoBusiness Instance {
-            get {
-                if (_instance == null) {
-                    _instance = new GastoBusiness();
-                }
-                return _instance;
-            }
-            private set { }
-        }
-
-        private GastoBusiness() { }
-
         public int Add(Gasto entity)
         {
             using (var context = new CCEntities()) {
