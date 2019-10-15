@@ -69,5 +69,6 @@
     <Build Include="dbo\Tables\CategoriaIngreso.sql" />
     <Build Include="dbo\Tables\CategoriaGasto.sql" />
     <Build Include="dbo\Stored Procedures\GetGastos.sql" />
+    <Build Include="dbo\Stored Procedures\GetIngresos.sql" />
   </ItemGroup>
 </Project>
