@@ -67,5 +67,27 @@ namespace ControlCuentas.ERP.BusinessLogic
                 return gastosDA.GetGastos(query);
             }
         }
+
+        public decimal TotalGastos()
+        {
+            return this.TotalGastosEnCajaDeAhorro() + this.TotalGastosEnEfectivo();
+        }
+
+        public decimal TotalGastosEnCajaDeAhorro()
+        {
+            using (var context = new CCEntities()) {
+                var gastosDA = new GastoDataAccess(context);
+                return gastosDA.TotalGastosEn(2);
+            }
+        }
+
+        public decimal TotalGastosEnEfectivo()
+        {
+            using (var context = new CCEntities()) {
+                var gastosDA = new GastoDataAccess(context);
+                return gastosDA.TotalGastosEn(1);
+            }
+        }
+
     }
 }

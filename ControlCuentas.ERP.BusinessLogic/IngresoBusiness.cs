@@ -59,5 +59,26 @@ namespace ControlCuentas.ERP.BusinessLogic
             }
         }
 
+        public decimal TotalIngresos()
+        {
+            return this.TotalIngresosEnCajaDeAhorro() + this.TotalIngresosEnEfectivo();
+        }
+
+        public decimal TotalIngresosEnCajaDeAhorro()
+        {
+            using (var context = new CCEntities()) {
+                var ingresosDA = new IngresoDataAccess(context);
+                return ingresosDA.TotalIngresosEn(2);
+            }
+        }
+
+        public decimal TotalIngresosEnEfectivo()
+        {
+            using (var context = new CCEntities()) {
+                var ingresosDA = new IngresoDataAccess(context);
+                return ingresosDA.TotalIngresosEn(1);
+            }
+        }
+
     }
 }

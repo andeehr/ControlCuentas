@@ -48,5 +48,13 @@ namespace ControlCuentas.ERP.DataAccess
 
             return result.ToList();
         }
+
+        public decimal TotalGastosEn(int idMedio)
+        {
+            var gastos = context.Gasto.Where(ingreso => ingreso.IdMedio == idMedio);
+
+            return gastos.Any() ? gastos.Sum(i => i.Importe) : 0;
+        }
+
     }
 }

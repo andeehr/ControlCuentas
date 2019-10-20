@@ -35,5 +35,13 @@ namespace ControlCuentas.ERP.DataAccess
 
             return result.ToList();
         }
+
+        public decimal TotalIngresosEn(int idMedio)
+        {
+            var ingresos = context.Ingreso.Where(ingreso => ingreso.IdMedio == idMedio);
+
+            return ingresos.Any() ? ingresos.Sum(i => i.Importe) : 0;
+
+        }
     }
 }

@@ -169,6 +169,7 @@
             this.Controls.Add(this.gbDisponible);
             this.Name = "MenuPrincipal";
             this.Text = "Menu principal";
+            this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.gbDisponible.ResumeLayout(false);
             this.gbDisponible.PerformLayout();
             this.gbAcciones.ResumeLayout(false);
